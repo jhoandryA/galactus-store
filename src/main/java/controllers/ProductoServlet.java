@@ -16,6 +16,7 @@ public class ProductoServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		response.getWriter().append("METODO GET - Served at: ").append(request.getContextPath());
 	}
 
@@ -24,6 +25,7 @@ public class ProductoServlet extends HttpServlet {
 	}
 	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		response.getWriter().append("METODO PUT - Served at: ").append(request.getContextPath());
 	}
 	
