@@ -23,6 +23,11 @@ public class CategoriaServiceImpl implements CategoriaService {
 		}
 	}
 
-	
+	@Override
+	public void insertarCategoria(Categoria categoria) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
