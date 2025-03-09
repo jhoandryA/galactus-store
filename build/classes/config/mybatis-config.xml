@@ -21,6 +21,6 @@
 	<!-- RUTA DE OTROS ARCHIVOS XML PARA MYBATIS -->
     <mappers>
         <!-- Para usar el XML, se referencia con 'resource' -->
-        <!-- mapper resource="com/ejemplo/dao/UsuarioMapper.xml"/-->
+        <mapper resource="dao/CategoriaMapper.xml"/>
     </mappers>
 </configuration>
