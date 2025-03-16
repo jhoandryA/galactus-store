@@ -8,7 +8,7 @@
  	<resultMap id="ProductoMap" type="models.Producto" >
  		<id column="id_producto" property="idProducto"/>
  		<result column="id_marca" property="idMarca"/>
- 		<result column="id_subcategoria" property="idCategoria"/>
+ 		<result column="id_subcategoria" property="idSubcategoria"/>
  		<result column="id_proveedor" property="idProveedor"/>
  		<result column="codigo_interno" property="codigoInterno"/>
  		<result column="codigo_externo" property="codigoExterno"/>

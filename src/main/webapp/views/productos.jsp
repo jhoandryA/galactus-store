@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
-<%@ page import="models.Subcategoria" %>
+<%@ page import="models.Producto" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 <body>
 
 	<%
-		List<Subcategoria> subcategorias = (List<Subcategoria>) request.getAttribute("subcategorias");
+		List<Producto> productos = (List<Producto>) request.getAttribute("productos");
 	%>
 
 	<header>
@@ -26,11 +26,12 @@
 	
 	<main class="p-4">
 		<div class="flex w-full justify-center p-4 gap-4 flex-wrap">
-			<% if (subcategorias != null && !subcategorias.isEmpty()) { %>
-				<% for(Subcategoria subcategoria: subcategorias) { %>
-					<a href="/galactus-store/productos?idSubcategoria=<%= subcategoria.getIdSubcategoria() %>" class="flex bg-gray-200 w-[200px] justify-center flex-col p-4 gap-2 items-center rounded-md border border-gray-300 border-solid hover:border-green-600 cursor-pointer">
-						<img class="rounded-sm" src="<%= subcategoria.getImagenUrl() %>" width="150px">
-						<span class="text-center font-bold text-gray-600"><%= subcategoria.getNombre() %></span>
+			<% if (productos != null && !productos.isEmpty()) { %>
+				<% for(Producto producto: productos) { %>
+					<a class="flex bg-gray-200 w-[200px] justify-center flex-col p-4 gap-2 items-center rounded-md border border-gray-300 border-solid hover:border-green-600 cursor-pointer">
+						<!-- img class="rounded-sm" src="" width="150px"!-->
+						<span class="text-center text-green-600"><%= producto.getCodigoInterno() %></span>
+						<span class="text-center font-bold text-gray-600"><%= producto.getNombre() %></span>
 					</a>
 				<% 	} %>
 			<%	} else { %>
@@ -38,8 +39,8 @@
 			<% } %>
 		</div>
 		
-		<% if (subcategorias != null && !subcategorias.isEmpty()) { %>
-			<div class="w-full p-4">Total registros: <%= subcategorias.size() %></div>
+		<% if (productos != null && !productos.isEmpty()) { %>
+				<div class="w-full p-4">Total registros: <%= productos.size() %></div>
 		<% } %>
 		
 		
