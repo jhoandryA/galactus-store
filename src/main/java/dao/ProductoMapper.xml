@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="dao.ProductoMapper">
+ 
+ 	<resultMap id="ProductoMap" type="models.Producto" >
+ 		<id column="id_producto" property="idProducto"/>
+ 		<result column="id_marca" property="idMarca"/>
+ 		<result column="id_subcategoria" property="idCategoria"/>
+ 		<result column="id_proveedor" property="idProveedor"/>
+ 		<result column="codigo_interno" property="codigoInterno"/>
+ 		<result column="codigo_externo" property="codigoExterno"/>
+ 		<result column="nombre" property="nombre"/>
+ 		<result column="descripcion" property="descripcion"/>
+ 		<result column="modelo" property="modelo"/>
+ 		<result column="tiempo_garantia_meses" property="tiempoGarantiaMeses"/>
+ 		<result column="precio" property="precio"/>
+ 		<result column="stock" property="stock"/>
+ 		<result column="fecha_compra" property="fechaCompra"/>
+ 		<result column="fecha_creacion" property="fechaCreacion"/>
+ 	</resultMap>
+ 
+ 	<select id="listarProductosPorIdSubcategoria" parameterType="int" resultMap="ProductoMap">
+ 		SELECT id_producto, id_marca, id_subcategoria, id_proveedor, codigo_interno,
+ 		codigo_externo, nombre, descripcion, modelo, tiempo_garantia_meses,
+ 		precio, stock, fecha_compra, fecha_creacion
+ 		FROM productos
+ 		WHERE estado_auditoria = '1' and id_subcategoria = #{idSubcategoria}
+ 	</select>
+ 	
+ </mapper>
