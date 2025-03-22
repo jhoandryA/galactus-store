@@ -20,14 +20,23 @@
  		<result column="stock" property="stock"/>
  		<result column="fecha_compra" property="fechaCompra"/>
  		<result column="fecha_creacion" property="fechaCreacion"/>
+ 		<result column="imagen_url" property="imagenUrl"/>
  	</resultMap>
  
  	<select id="listarProductosPorIdSubcategoria" parameterType="int" resultMap="ProductoMap">
- 		SELECT id_producto, id_marca, id_subcategoria, id_proveedor, codigo_interno,
- 		codigo_externo, nombre, descripcion, modelo, tiempo_garantia_meses,
- 		precio, stock, fecha_compra, fecha_creacion
- 		FROM productos
- 		WHERE estado_auditoria = '1' and id_subcategoria = #{idSubcategoria}
+ 		SELECT
+	 		(
+				SELECT pi.imagen_url 
+				FROM producto_imagenes pi
+				WHERE pi.estado_auditoria = '1' AND pi.id_producto = p.id_producto
+				ORDER BY pi.fecha_creacion ASC
+				LIMIT 1
+			) imagen_url, 
+			p.id_producto, p.id_marca, p.id_subcategoria, p.id_proveedor, p.codigo_interno,
+	 		p.codigo_externo, p.nombre, p.descripcion, p.modelo, p.tiempo_garantia_meses,
+	 		p.precio, p.stock, p.fecha_compra, p.fecha_creacion
+ 		FROM productos p
+ 		WHERE p.estado_auditoria = '1' and p.id_subcategoria = #{idSubcategoria}
  	</select>
  	
  </mapper>

@@ -17,8 +17,17 @@ public class Producto {
 	private Integer stock;
 	private Date fechaCompra;
 	private Date fechaCreacion;
+	private String imagenUrl;
 	
 	
+	
+	
+	public String getImagenUrl() {
+		return imagenUrl;
+	}
+	public void setImagenUrl(String imagenUrl) {
+		this.imagenUrl = imagenUrl;
+	}
 	public Integer getIdProducto() {
 		return idProducto;
 	}
