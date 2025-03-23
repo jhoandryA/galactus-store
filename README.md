@@ -1,12 +1,12 @@
 # galactus-store
-App creada con el grupo ed lenguaje de programacion java web sise
+Aplicativa 2
 
-### Integrantes
-- Diego Baes
-- Juan Marquina
+### Alumno
+Apaza Sandagorda Jhoandry
+
 
 ### Alcance - Explicacion del Proyecto
-asdasd
+
 
 ### Diseño de la BD
 
