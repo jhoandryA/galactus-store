@@ -5,9 +5,10 @@ Aplicativa 2
 Apaza Sandagorda Jhoandry
 
 
-### Alcance - Explicacion del Proyecto
+### pregunta 8
 
+link video: 
+https://youtu.be/SOnDHyybaZk
 
-### Diseño de la BD
 
 
